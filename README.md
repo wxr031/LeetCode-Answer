@@ -1,3 +1,4 @@
 # LeetCode-Answer
 
-## All solutions written in Java (Except for 'Shell' and 'Database' problems)
+This repository consists of several solutions to problems in Leetcode.
+All solutions are written in Java.
