@@ -1,6 +1,6 @@
 class Solution {
 	public String convert(String string, int numRows) {
-		if(numRows == 1 || string.length() == 0) return string;
+		if(numRows == 1 || string == null || string.length() == 0) return string;
 		StringBuilder builder = new StringBuilder();
 		int width = numRows * 2 - 2;
 

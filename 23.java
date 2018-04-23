@@ -24,7 +24,7 @@ class Solution {
 		return mergeTwoList(mergeKListUtil(lists, left, mid), mergeKListUtil(lists, mid+1 ,right));
 	}
 	public ListNode mergeKLists(ListNode[] lists) {
-		if(lists.length == 0) return null;
+		if(list == null || lists.length == 0) return null;
 		return mergeKListUtil(lists, 0, lists.length-1);
 	}
 }

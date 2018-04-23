@@ -8,7 +8,7 @@ class Solution {
 		return right - center - 1;
 	}
 	public String longestPalindrome(String string) {
-		if(string.length() <= 1) return string;
+		if(string == null || string.length() <= 1) return string;
 
 		/* create auxiliary string */
 		int newLength = string.length() * 2 + 1;
