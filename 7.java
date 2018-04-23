@@ -1,6 +1,6 @@
 class Solution {
-    public int reverse(int number) {
-        if(number == 0) return 0;
+	public int reverse(int number) {
+		if(number == 0) return 0;
 		long result = 0;
 		while(number != 0) {
 			long newResult = result * 10 + number % 10;
