@@ -1,26 +1,12 @@
 class Solution {
-	public static int maxSubArray(int[] nums) {
-		boolean allNeg = true;
-		int maxNeg = Integer.MIN_VALUE;
-		for(int num : nums) {
-			if(num > 0) {
-				allNeg = false;
-				break;
-			}
-			maxNeg = Math.max(num, maxNeg);
-		}
-		if(allNeg) return maxNeg;
-
-		int result = 0, curr = 0;
+	public int maxSubArray(int[] nums) {
+		int result = Integer.MIN_VALUE, curr = 0;
 		for(int num : nums) {
 			if(curr + num >= 0) curr += num;
-			else curr = 0;
+			else curr = num;
 			result = Math.max(curr, result);
+            if(curr < 0) curr = 0;
 		}
 		return result;
-	}
-	public static void main(String args[]) {
-		int[] nums = new int[] {-3, -7, -1, 3, -2, -3};
-		System.out.println(maxSubArray(nums));
 	}
 }
