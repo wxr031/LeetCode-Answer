@@ -1,26 +1,32 @@
-class Solution {
+public class Solution {
+	private static final int MAXN = 26;
 	public boolean isScramble(String s1, String s2) {
-		if(s1.length() != s2.length())
+		if(s1 == null || s2 == null || s1.length() != s2.length())
 			return false;
-		int len = s1.length();
-		boolean[][][] dp = new boolean[len][len][len+1];
-		for(int i = 0; i < len; i++) {
-			for(int j = 0; j < len; j++) {
-				dp[i][j][1] = s1.charAt(i) == s2.charAt(j);
+		return isScrambleUtil(s1, s2);
+	}
+	public boolean isScrambleUtil(String s1, String s2) {
+		if (s1.equals(s2))
+			return true; 
+		// check if appearance of all letters are the same
+		int[] count = new int[MAXN];
+		for (int i = 0; i < s1.length(); i++) {
+			count[s1.charAt(i)-'a']++;
+			count[s2.charAt(i)-'a']--;
+		}
+		for(int i = 0; i < MAXN; i++) {
+			if(count[i] != 0) {
+				return false;
 			}
 		}
-		for(int l = 2; l <= len; l++) {
-            for(int k = 1; k < l; k++) {
-			    for(int i = 0; i < len-k; i++) {
-				    for(int j = 0; j < len-l+k && j < len-k; j++) {
-						dp[i][j][l] = dp[i][j][l] || (dp[i][j][k] && dp[i+k][j+k][l-k])
-							|| (dp[i][j+l-k][k] && dp[i+k][j][l-k]);
-					}
-				}
-			}
+		for (int i = 1; i < s1.length(); i++) {
+			if (isScramble(s1.substring(0, i), s2.substring(0, i)) 
+					&& isScramble(s1.substring(i), s2.substring(i))) 
+				return true;
+			if (isScramble(s1.substring(0, i), s2.substring(s2.length()-i)) 
+					&& isScramble(s1.substring(i), s2.substring(0, s2.length()-i)))
+				return true;
 		}
-		return dp[0][0][len];
+		return false;
 	}
 }
-
-
