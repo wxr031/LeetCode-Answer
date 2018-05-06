@@ -6,8 +6,7 @@ class Solution {
 			hold2 = Math.max(hold2, sell1 - prices[i]);
 			sell1 = Math.max(sell1, hold1 + prices[i]);
 			hold1 = Math.max(hold1, -prices[i]);
-			//System.out.println(sell2 + " " + hold2 + " " + sell1 + " " + hold1);
 		}
-		return Math.max(sell1, sell2);
+		return sell2;
 	}
 }
