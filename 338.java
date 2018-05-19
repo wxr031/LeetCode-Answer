@@ -1,5 +1,3 @@
-import java.util.*;
-
 class Solution {
 	public int[] countBits(int num) {
 		int[] result = new int[num+1];
