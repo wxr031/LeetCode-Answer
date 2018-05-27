@@ -3,13 +3,10 @@ class Solution {
 		if(citations.length == 0 || citations[citations.length-1] == 0) {
 			return 0;
 		}
-		for(int i = 0; i < citations.length; i++) {
-			citations[i] -= citations.length - i;
-		}
 		int left = 0, right = citations.length-1;
 		while(left < right) {
 			int mid = left + ((right - left) >> 1);
-			if(citations[mid] >= 0) {
+			if(citations[mid] >= citations.length - mid) {
 				right = mid;
 			}
 			else {
@@ -19,4 +16,3 @@ class Solution {
 		return citations.length - right;
 	}
 }
-
