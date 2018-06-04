@@ -1,5 +1,3 @@
-import java.util.*;
-
 class Solution {
 	public static final int MAXN = 1690;
 	public int nthUglyNumber(int n) {
