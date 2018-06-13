@@ -1,4 +1,3 @@
-import java.util.*;
 class Solution {
 	public List<String> restoreIpAddresses(String s) {
 		List<String> result = new ArrayList<>();
@@ -6,7 +5,7 @@ class Solution {
 		restoreIpAddressesUtil(result, s, sb, 4);
 		return result;
 	}
-	public void restoreIpAddressesUtil(List<String> result, String s, StringBuilder sb, int remain) {
+	private void restoreIpAddressesUtil(List<String> result, String s, StringBuilder sb, int remain) {
 		if(remain == 0) {
 			if(s.length() == 0) {
 				sb.deleteCharAt(sb.length()-1);
