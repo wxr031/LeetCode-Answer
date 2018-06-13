@@ -19,8 +19,8 @@ class SummaryRanges {
 	public void addNum(int val) {
 		if(tree.containsKey(val)) return;
 		Integer lowStart = tree.lowerKey(val), highStart = tree.higherKey(val);
-		Interval low = (lowStart == null) ? null : tree.get(lowStart);
-		Interval high = (highStart == null) ? null : tree.get(highStart);
+		Interval low = lowStart == null ? null : tree.get(lowStart);
+		Interval high = highStart == null ? null : tree.get(highStart);
 		if(low != null && val <= low.end) return;
 		if(low != null && low.end == val - 1 && high != null && high.start == val + 1) {
 			tree.put(low.start, new Interval(low.start, high.end));
