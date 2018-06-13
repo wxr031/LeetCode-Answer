@@ -11,7 +11,7 @@ class Solution {
 				return this.val - p1.val;
 			}
 	}
-	public static int trapRainWater(int[][] heightMap) {
+	public int trapRainWater(int[][] heightMap) {
 		if(heightMap == null || heightMap.length == 0 || heightMap[0].length == 0)
 			return 0;
 		int row = heightMap.length, col = heightMap[0].length;
@@ -28,7 +28,7 @@ class Solution {
 			pq.offer(new Point(row - 1, c, heightMap[row - 1][c]));
 			visited[0][c] = visited[row - 1][c] = true;
 		}
-		while(!pq.isEmpty) {
+		while(!pq.isEmpty()) {
 			Point point = pq.poll();
 			int r = point.r, c = point.c;
 			if(heightMap[r][c] < maxHeight)
