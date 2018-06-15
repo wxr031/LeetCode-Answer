@@ -12,15 +12,15 @@ class Solution {
 		}
 		return left;
 	}
-	private boolean cutLess(int[] nums, int minCut, int sumMin) {
-		int sum = 0, allCut = 0;
+	private boolean cutLess(int[] nums, int cutMin, int sumMin) {
+		int sum = 0, cutAll = 0;
 		for(int num : nums) {
 			sum += num;
 			if(sum > sumMin) {
-				allCut++;
+				cutAll++;
 				sum = num;
 			}
-			if(allCut > minCut) return false;
+			if(cutAll > cutMin) return false;
 		}
 		return true;
 	}
