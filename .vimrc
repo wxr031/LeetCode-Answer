@@ -1,0 +1,13 @@
+syntax on
+set number
+set ruler
+set tabstop=4
+set shiftwidth=4
+set nocompatible
+set wildmenu
+set backupdir=~/tmp,.,/var/tmp/vi.recover,/tmp
+set directory=~/tmp,/var/tmp/vi.recover,/tmp,.
+set backup
+set backspace=2
+set autoindent
+set viminfo='20,\"50
