@@ -1,5 +1,5 @@
 class Solution {
-	static final int MOD = 1337;
+	private static final int MOD = 1337;
 	public int superPow(int a, int[] b) {
 		long result = 1;
 		a %= MOD;
