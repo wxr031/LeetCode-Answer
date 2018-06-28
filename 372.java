@@ -1,5 +1,5 @@
 class Solution {
-	static final int MOD = 1337;
+	private static final int MOD = 1337;
 	public int superPow(int a, int[] b) {
 		long result = 1;
 		a %= MOD;
@@ -13,7 +13,7 @@ class Solution {
 		}
 		return (int)result;
 	}
-	public long pow10(long a) {
+	private long pow10(long a) {
 		long two = (a * a) % MOD, four = (two * two) % MOD, eight = (four * four) % MOD;
 		return (two * eight) % MOD;
 	}

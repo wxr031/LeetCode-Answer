@@ -6,7 +6,7 @@ class Solution {
 		int[] putRow = new int[num];
 		return totalNQueensUtil(num, row, leftDiagnal, rightDiagnal, putRow, 0, 0);
 	}
-	public int totalNQueensUtil(int num, boolean[] row, boolean[] leftDiagnal,
+	private int totalNQueensUtil(int num, boolean[] row, boolean[] leftDiagnal,
 			boolean[] rightDiagnal, int[] putRow, int pos, int result) {
 		if(pos == num) return result+1;
 		for(int i = 0; i < num; i++) {
