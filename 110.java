@@ -9,9 +9,9 @@
  */
 class Solution {
 	public boolean isBalanced(TreeNode root) {
-		return (isBalancedUtil(root) == -1) ? false : true;
+		return isBalancedUtil(root) != -1;
 	}
-	public int isBalancedUtil(TreeNode root) {
+	private int isBalancedUtil(TreeNode root) {
 		if(root == null) return 0;
 		int leftHeight = isBalancedUtil(root.left);
 		int rightHeight = isBalancedUtil(root.right);
@@ -27,4 +27,3 @@ class Solution {
 		return -1;
 	}
 }
-
