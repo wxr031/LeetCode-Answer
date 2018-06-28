@@ -1,4 +1,3 @@
-import java.util.*;
 class Solution {
 	public List<List<String>> solveNQueens(int num) {
 		List<List<String>> result = new ArrayList<>();
@@ -9,7 +8,7 @@ class Solution {
 		solveNQueensUtil(result, num, row, leftDiagnal, rightDiagnal, putRow, 0);
 		return result;
 	}
-	public void solveNQueensUtil(List<List<String>> result, int num, boolean[] row,
+	private void solveNQueensUtil(List<List<String>> result, int num, boolean[] row,
 			boolean[] leftDiagnal, boolean[] rightDiagnal, int[] putRow, int pos) {
 		if(pos == num) {
 			List<String> list = new ArrayList<>();
