@@ -17,7 +17,7 @@ class Solution {
 		change1.val = change2.val;
 		change2.val = temp;
 	}
-	public void recoverTreeUtil(TreeNode root) {
+	private void recoverTreeUtil(TreeNode root) {
 		if(root == null) return;
 		recoverTreeUtil(root.left);
 		if(change1 == null && prevNode != null && prevNode.val > root.val) {
