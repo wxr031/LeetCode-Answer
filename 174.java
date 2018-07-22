@@ -3,7 +3,7 @@ class Solution {
 		int length = dungeon.length, width = dungeon[0].length;
 		int[][] dp = new int[length + 1][width + 1];
 		Arrays.fill(dp[length], Integer.MAX_VALUE);
-		dp[length][width - 1] = dp[length - 1][width] = 1;
+		dp[length][width - 1] = 1;
 		for (int i = length - 1; i >= 0; i--) {
 			dp[i][width] = Integer.MAX_VALUE;
 			for (int j = width - 1; j >= 0; j--) {
