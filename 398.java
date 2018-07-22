@@ -8,6 +8,7 @@ class Solution {
 	}
 
 	public int pick(int target) {
+		/* reservoir sampling */
 		int result = -1, count = 0;
 		for(int i = 0; i < array.length; i++) {
 			if(array[i] == target && random.nextInt(++count) == 0) {
