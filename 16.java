@@ -1,6 +1,5 @@
 class Solution {
 	public int threeSumClosest(int[] nums, int target) {
-		assert nums.length >= 3;
 		Arrays.sort(nums);
 		int result = Integer.MAX_VALUE, minDiff = Integer.MAX_VALUE;
 		for(int i = 0; i < nums.length - 2; i++) {
