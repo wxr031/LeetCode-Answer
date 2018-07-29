@@ -9,12 +9,12 @@
 class Solution {
 	public ListNode mergeKLists(ListNode[] lists) {
 		if(list == null || lists.length == 0) return null;
-		return mergeKListUtil(lists, 0, lists.length-1);
+		return mergeKListUtil(lists, 0, lists.length - 1);
 	}
 	private ListNode mergeKListUtil(ListNode[] lists, int left, int right) {
 		if(left == right) return lists[left];
-		int mid = left + (right-left) / 2;
-		return mergeTwoList(mergeKListUtil(lists, left, mid), mergeKListUtil(lists, mid+1 ,right));
+		int mid = left + (right - left) / 2;
+		return mergeTwoList(mergeKListUtil(lists, left, mid), mergeKListUtil(lists, mid + 1 ,right));
 	}
 	private ListNode mergeTwoList(ListNode node1, ListNode node2) {
 		if(node1 == null) return node2;
