@@ -13,7 +13,7 @@ class Solution {
 				step += between;
 			}
 		}
-		return (int)curr;
+		return curr;
 	}
 	private int numberBetween(long curr, long next, int num) {
 		int total = 0;
