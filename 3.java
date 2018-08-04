@@ -1,7 +1,6 @@
 class Solution {
-    public static final int CHAR_NUM = 256;
 	public int lengthOfLongestSubstring(String string) {
-		boolean[] hash = new boolean[CHAR_NUM];
+		boolean[] hash = new boolean[256];
 		int left = 0, right = 0;
 		int result = -1;
 
