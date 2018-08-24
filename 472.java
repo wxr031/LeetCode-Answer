@@ -39,7 +39,7 @@ class Solution {
 		Trie trie = new Trie();
 		trie.insert(words[0]);
 		List<String> result = new ArrayList<>();
-		for(int i = 1; i < words.length(); i++) {
+		for(int i = 1; i < words[i].length(); i++) {
 			if(words[i].length() == words[i - 1].length()) {
 				trie.insert(words[i]);
 				continue;
@@ -55,7 +55,7 @@ class Solution {
 			if(candidates.get(candidates.size() - 1) == words[i].length()) {
 				result.add(words[i]);
 			}
-			if(i < words.length() - 1) {
+			if(i < words[i].length() - 1) {
 				trie.insert(words[i]);
 			}
 		}
