@@ -1,4 +1,3 @@
-import java.util.*;
 class Solution {
 	public boolean makesquare(int[] nums) {
 		if (nums.length < 4) {
