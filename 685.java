@@ -23,7 +23,6 @@ class Solution {
 			boolean another = false;
 			for(int i = edges.length - 1; i >= 0; i--) {
 				if(edges[i][1] == deg2) {
-					Arrays.fill(been, false);
 					if(another || cover(edges[i], deg0, adj, been) == edges.length) {
 						return edges[i];
 					}
