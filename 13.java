@@ -11,11 +11,7 @@ class Solution {
 		value['M'] = 1000;
 		for (int i = 0; i < s.length(); i++) {
 			char ch = s.charAt(i);
-			if (i == s.length() - 1) {
-				total += value[ch];
-				break;
-			}
-			char nch = s.charAt(i + 1);
+			char nch = (i == s.length() - 1) ? '\0' : s.charAt(i + 1);
 			if (value[ch] < value[nch]) {
 				total -= value[ch];
 			}
