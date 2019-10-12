@@ -1,30 +1,24 @@
 class Solution {
-	public List<String> generateParenthesis(int num) {
-		if(num == 0) return Collections.singletonList(" ");
+	public List<String> generateParenthesis(int n) {
 		List<String> result = new ArrayList<>();
-		StringBuilder sb = new StringBuilder();
-		generateUtil(result, num, 0, 0, sb);
+		generateParenthesis(result, new StringBuilder(), 0, 0, n);
 		return result;
 	}
-	public void generateUtil(List<String> result, int num, int left, int pair, StringBuilder sb) {
-		if(left == 0) {
-			sb.append('(');
-			generateUtil(result, num, left + 1, pair, sb);
+	private void generateParenthesis(List<String> result, StringBuilder sb, int leftNum, int curr, int n) {
+		if (curr == 2 * n) {
+			result.add(sb.toString());
+			return;
+		}
+		if (2 * leftNum - curr > 0) {
+			sb.append(')');
+			generateParenthesis(result, sb, leftNum, curr + 1, n);
 			sb.deleteCharAt(sb.length() - 1);
 		}
-		else if(left + pair == num) {
-			for(int i = 0; i < left; i++) {
-				sb.append(')');
-			}
-			result.add(sb.toString());
-			sb.delete(sb.length() - left, sb.length());
-		}
-		else {
+		if (leftNum < n) {
 			sb.append('(');
-			generateUtil(result, num, left + 1, pair, sb);
-			sb.setCharAt(sb.length() - 1, ')');
-			generateUtil(result, num, left - 1, pair + 1, sb);
+			generateParenthesis(result, sb, leftNum + 1, curr + 1, n);
 			sb.deleteCharAt(sb.length() - 1);
 		}
 	}
 }
+
